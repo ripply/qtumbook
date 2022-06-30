@@ -6,9 +6,13 @@
     "example": "examples"
   },
   "dependencies": {
-    "gitbook-plugin-anchors": "^0.7.1"
+    "gitbook-plugin-anchors": "^0.7.1",
+    "graceful-fs": "^4.2.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gitbook-plugin-language-picker": "^0.1.0",
+    "honkit": "^3.7.4"
+  },
   "scripts": {
     "start": "gitbook serve",
     "build": "gitbook build . docs",
