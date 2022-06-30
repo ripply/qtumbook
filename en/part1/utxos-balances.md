@@ -6,7 +6,7 @@ In Ethereum, you'd typically have an account with an unique address that holds a
 
 In QTUM, you don't really have accounts. Instead, you have a collection of UTXOs, each of which has its own address. An UTXO may be used only once when you send money or interact with a Smart Contract. If an UTXO has more value than you intend to use, it'd be splitted up into multiple UTXOs after a transaction.
 
-In this chapter we'll explore the UTXO model by sending some money using the `qcli` command, and peeking into the transaction data.
+In this chapter we'll explore the UTXO model by sending some money using the `qtum-cli` command, and peeking into the transaction data.
 
 Later in Part II we'll see how QTUM's Smart Contract implementation bridges Bitcoin's UTXO model with Ethereum's account model.
 
@@ -17,7 +17,7 @@ With UTXO, you *can* reuse a payment address. For better anonymity, though, you'
 Let's generate an address:
 
 ```
-qcli getnewaddress
+qtum-cli getnewaddress
 ```
 
 You get a new address:
@@ -29,20 +29,20 @@ qfsPCLrjjmqXptxWNXXg3wQruzC8bhPx63
 Get as many as you want:
 
 ```
-> qcli getnewaddress
+> qtum-cli getnewaddress
 qZWeFWECjKQ3KstHhCjxFj9hiM7jzXWw3p
 
-> qcli getnewaddress
+> qtum-cli getnewaddress
 qJbSKruSXWnjSRZvSXMf2Y33gEw9FqHMHf
 
-> qcli getnewaddress
+> qtum-cli getnewaddress
 qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
 ```
 
 An UTXO address is 20 bytes (160 bits) long, [base58 encoded](https://en.bitcoin.it/wiki/Base58Check_encoding). This is the same length as Ethereum's address. We can convert it to an Ethereum compatible hexadecimal address:
 
 ```
-qcli gethexaddress qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
+qtum-cli gethexaddress qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
 
 dd2c6512563e4274dafd8312e0e738ede48f3046
 ```
@@ -50,7 +50,7 @@ dd2c6512563e4274dafd8312e0e738ede48f3046
 And to convert it back to base58 UTXO address:
 
 ```
-qcli fromhexaddress dd2c6512563e4274dafd8312e0e738ede48f3046
+qtum-cli fromhexaddress dd2c6512563e4274dafd8312e0e738ede48f3046
 
 qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
 ```
@@ -62,7 +62,7 @@ Now let's send money to an UTXO address. You'd be sending money to yourself, but
 First generate a new receiving address:
 
 ```
-qcli getnewaddress
+qtum-cli getnewaddress
 
 qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
 ```
@@ -72,7 +72,7 @@ qdiqg2mp646KhSQjVud3whv6C34hNHQnL2
 Next, send 10 qtums to this address:
 
 ```
-qcli sendtoaddress qdiqg2mp646KhSQjVud3whv6C34hNHQnL2 10
+qtum-cli sendtoaddress qdiqg2mp646KhSQjVud3whv6C34hNHQnL2 10
 ```
 
 A transaction ID (txid) is returned for this transfer:
@@ -94,7 +94,7 @@ Wait for a minute or two for the transaction be be confirmed. You should see som
 Use `gettransaction` to get some general information about this transaction:
 
 ```
-qcli gettransaction 11e790d26d6996803960ef1586cbaeb54af20fd3e1f41508843c36f2ef60bb9d
+qtum-cli gettransaction 11e790d26d6996803960ef1586cbaeb54af20fd3e1f41508843c36f2ef60bb9d
 
 {
   "amount": 0.00000000,
@@ -142,7 +142,7 @@ This transaction had been confirmed twice so far:
 Let's now use `listunspent` to list recently created UTXOs. List UTXOs that had been confirmed less than 20 times:
 
 ```
-qcli listunspent 0 20
+qtum-cli listunspent 0 20
 
 [
   {
@@ -181,7 +181,7 @@ We can dig a little deeper into the transaction data to see that QTUM really sha
 Let's decode the transaction data:
 
 ```
-qcli decoderawtransaction \
+qtum-cli decoderawtransaction \
 02000000017d2c908ccf224c7204024699fa9bee9cafc4319297e3c682b2d2d4bc4724da5a010000006a473044022063b61ff64f63407a7ef1e2060d6f54cae987a10b30d20b55d722f69e0bcc225e0220340fa34885cb0bdf056067d90f16b53318d44861872635051963237623c63699012102dd47f2c6e005fdc2182135ffe72c985a095ca9c59000d7f1576ed8717ef6e017feffffff02e0fe1132d10100001976a914dc41025b0c419681bffc3446ee8b506dde59e18e88ac00ca9a3b000000001976a914dd2c6512563e4274dafd8312e0e738ede48f304688ac90060000
 ```
 

@@ -139,7 +139,7 @@ Starting without these flags will significantly reduce sync time but these flags
 
 ```
 docker run -it --rm \
-  --name qtumd_regtest \
+  --name qtumd_testnet \
   -v `pwd`:/root \
   -p 23888:23888 \
   qtum/qtum \
@@ -362,4 +362,4 @@ settxfee amount
 signmessage "address" "message"
 ```
 
-For online documentation for available rpc calls: https://docs.qtum.site/en/Qtum-RPC-API/
+For online documentation for available rpc calls: [Qtum RPC API · Qtum Documentation](https://docs.qtum.site/en/Qtum-RPC-API/)

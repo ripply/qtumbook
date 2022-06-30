@@ -8,14 +8,12 @@ The docker container connects to different networks depending on which `QTUM_NET
 
 ```
 docker run -it --rm \
-  --name myapp \
-  -e "QTUM_NETWORK=testnet" \
-  -v `pwd`:/dapp \
-  -p 9899:9899 \
-  -p 9888:9888 \
-  -p 3889:3889 \
+  --name qtumd_testnet \
+  -v `pwd`:/root \
+  -p 23888:23888 \
   -p 13888:13888 \
-  hayeah/qtumportal
+  qtum/qtum \
+  qtumd -testnet -rpcbind=0.0.0.0:3889 -rpcallowip=0.0.0.0/0 -rpcuser=qtum -rpcpassword=testpasswd
 ```
 
 * `-p 13888:13888` is the p2p port for the testnet, so other nodes can connect to you.
@@ -23,12 +21,21 @@ docker run -it --rm \
 It takes some time to download the blockchain data from the network. You'll see log messages like this stream by:
 
 ```
-06:41:56  qtumd | 2017-12-14 06:41:56 UpdateTip: new best=000054cbb176ed62b2f6fc335204bee4b7ce5f658b8f7cfff6961c25c9a54cf9 height=2094 version=0x20000003 log2_work=27.032757 tx=2095 date='2017-09-08 05:50:54' progress=0.000638 cache=0.4MiB(2094txo)
-06:41:56  qtumd | 2017-12-14 06:41:56 ProcessNetBlock: ACCEPTED
-06:41:56  qtumd | 2017-12-14 06:41:56 UpdateTip: new best=0000924e3af343bd41f0476b92aeef4e46d748db436d5a5074f337989b7ffba7 height=2095 version=0x20000003 log2_work=27.033445 tx=2096 date='2017-09-08 05:50:54' progress=0.000638 cache=0.4MiB(2095txo)
-06:41:56  qtumd | 2017-12-14 06:41:56 ProcessNetBlock: ACCEPTED
-06:41:56  qtumd | 2017-12-14 06:41:56 UpdateTip: new best=0000bf6616615286a786f0ec59c3881f48e1b1a49367779f33753a027b099c31 height=2096 version=0x20000003 log2_work=27.034133 tx=2097 date='2017-09-08 05:50:54' progress=0.000638 cache=0.4MiB(2096txo)
-06:41:56  qtumd | 2017-12-14 06:41:56 ProcessNetBlock: ACCEPTED
+2022-06-30T23:12:56Z Synchronizing blockheaders, height: 2000 (~0.17%)
+2022-06-30T23:12:56Z Synchronizing blockheaders, height: 4000 (~0.34%)
+2022-06-30T23:12:57Z Synchronizing blockheaders, height: 6000 (~0.51%)
+2022-06-30T23:12:57Z Synchronizing blockheaders, height: 8000 (~0.68%)
+2022-06-30T23:12:58Z Synchronizing blockheaders, height: 10000 (~0.85%)
+2022-06-30T23:12:58Z Synchronizing blockheaders, height: 12000 (~1.02%)
+2022-06-30T23:12:59Z Synchronizing blockheaders, height: 14000 (~1.19%)
+2022-06-30T23:12:59Z Synchronizing blockheaders, height: 16000 (~1.36%)
+2022-06-30T23:13:00Z Synchronizing blockheaders, height: 18000 (~1.53%)
+2022-06-30T23:13:00Z Synchronizing blockheaders, height: 20000 (~1.70%)
+2022-06-30T23:13:01Z Synchronizing blockheaders, height: 22000 (~1.87%)
+2022-06-30T23:13:01Z Synchronizing blockheaders, height: 24000 (~2.05%)
+2022-06-30T23:13:01Z Synchronizing blockheaders, height: 26000 (~2.22%)
+2022-06-30T23:13:01Z Synchronizing blockheaders, height: 28000 (~2.39%)
+2022-06-30T23:13:02Z Synchronizing blockheaders, height: 30000 (~2.56%)
 
 // synchronizing with network...
 ```
@@ -36,11 +43,13 @@ It takes some time to download the blockchain data from the network. You'll see 
 * `progress` approaches 1.0 (100%) as your local node catch up to the network.
 * `height` the latest block that had been synced.
 
+Keep in mind that to use [Janus](https://github.com/qtumproject/janus) you will need to enable indexing `-txindex -addrindex=1 -logevents` which significantly increases the time to sync the blockchain
+
 Visit the [Testnet Block Explorer](https://testnet.qtum.org/) to see some stats about the test network. In particular, it lists the latest blocks mined, so you can get a rough idea of how far along you are in the synchronization process:
 
 ![](networks/test-explorer.jpg)
 
-As of Mid-December 2017, the block height is about 50,000ish.
+As of July 2022, the block height is about 2 million.
 
 ## Getting Testnet Tokens
 
@@ -51,7 +60,7 @@ http://testnet-faucet.qtum.info
 First generate a new payment address:
 
 ```
-qcli getnewaddress
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getnewaddress
 
 qcf3Yv72SbLvVDmU99BMf5T1YwvdvA3fx6
 ```
@@ -75,7 +84,7 @@ Clicking on the pay out address, you'd see a link to view the transaction in the
 Tapping ctrl-r madly to refresh the browsers again and again, because it'll help the network to confirm the transaction faster. Once it's confirmed, you can check your balance locally:
 
 ```
-qcli getbalance
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getbalance
 
 94.00000000
 ```
@@ -83,7 +92,7 @@ qcli getbalance
 You can also see the UTXOs created for that amount:
 
 ```
-qcli listunspent
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd listunspent
 
 [
   {
@@ -104,14 +113,14 @@ But sorry, there's no http://faucet.qtum.info : p
 
 # Main Network
 
-To connect to the mainnet, set `QTUM_NETWORK=mainnet`:
+To connect to the mainnet, drop `-testnet` or `-regtest`:
 
 ```
 docker run -it --rm \
-  --name myapp \
-  -e "QTUM_NETWORK=mainnet" \
-  -v `pwd`:/dapp \
-  hayeah/qtumportal
+  --name qtumd_mainnet \
+  -v `pwd`:/root \
+  qtum/qtum \
+  qtumd -rpcbind=0.0.0.0:3889 -rpcallowip=0.0.0.0/0 -rpcuser=qtum -rpcpassword=testpasswd
 ```
 
 Note that we've omitted the `-p` flags, so the network ports are not accessible outside the container.
@@ -119,6 +128,6 @@ Note that we've omitted the `-p` flags, so the network ports are not accessible 
 It's safer to do your things by shelling into the container:
 
 ```
-docker exec -it myapp sh
+docker exec -it qtumd_mainnet sh
 ```
 
