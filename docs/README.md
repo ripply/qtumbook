@@ -1,20 +1,17 @@
 # qtum documents
 
-```
-# npm install gitbook-cli -g
-yarn global add gitbook-cli
-```
-
 Install GitBook plugins:
 
 ```
-gitbook install
+yarn install
 ```
 
 To serve locally:
 
 ```
-gitbook serve
+yarn run start
+# or
+npx honkit serve
 ```
 
 # To Publish

@@ -1,0 +1,602 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Truffle · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="janus-docker.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1 - Running QTUM</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../part1/qtum-docker.html">
+            
+                <a href="../part1/qtum-docker.html">
+            
+                    
+                    QTUM Docker Container
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../part1/qtum-docker.html">
+            
+                <a href="../part1/qtum-docker.html#running-regtest-mode">
+            
+                    
+                    Tip: regtest Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../part1/qtum-docker.html">
+            
+                <a href="../part1/qtum-docker.html#new-blocks-on-demand">
+            
+                    
+                    Tip: New Blocks On Demand
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../part1/qtum-docker-codenvy/">
+            
+                <a href="../part1/qtum-docker-codenvy/">
+            
+                    
+                    Docker In Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../part1/utxos-balances.html">
+            
+                <a href="../part1/utxos-balances.html">
+            
+                    
+                    UTXOs Accounting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../part1/networks.html">
+            
+                <a href="../part1/networks.html">
+            
+                    
+                    Test & Main Networks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../part1/networks.html">
+            
+                <a href="../part1/networks.html#getting-testnet-tokens">
+            
+                    
+                    Tip: Free Testnet Tokens
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2 - Web3</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="janus.html">
+            
+                <a href="janus.html">
+            
+                    
+                    Web3 Compatibility Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="janus-docker.html">
+            
+                <a href="janus-docker.html">
+            
+                    
+                    Janus Docker Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="truffle.html">
+            
+                <a href="truffle.html">
+            
+                    
+                    Truffle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Truffle</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="truffle"><a name="truffle" class="plugin-anchor" href="#truffle"><i class="fa fa-link" aria-hidden="true"></i></a>Truffle</h1>
+<p>Truffle is supported via <a href="https://github.com/qtumproject/janus" target="_blank">Janus</a> and there are two ways to get it working.</p>
+<ul>
+<li>By loading private keys into Janus/Qtum</li>
+<li>Using <code>@qtumproject/hdwallet-provider</code></li>
+</ul>
+<p>Lets unbox an <a href="https://github.com/qtumproject/react-box" target="_blank">example truffle box</a> and walk through running a migration</p>
+<p>First, go to an empty directory and create a new directory and unbox</p>
+<pre><code class="lang-bash">mkdir react-box
+<span class="hljs-built_in">cd</span> react-box
+truffle unbox qtumproject/react-box
+</code></pre>
+<p>Output should look like this</p>
+<pre><code>Starting unbox...
+=================
+
+✔ Preparing to download box
+✔ Downloading
+✔ Cleaning up temporary files
+✔ Setting up box
+
+Unbox successful, sweet!
+
+Commands:
+
+  Compile:              truffle compile
+  Migrate:              truffle migrate
+  Test contracts:       truffle test
+  Test dapp:            cd client &amp;&amp; npm test
+  Run dev server:       cd client &amp;&amp; npm run start
+  Build for production: cd client &amp;&amp; npm run build
+</code></pre><p>Next, install dependencies</p>
+<pre><code class="lang-bash">npm install
+</code></pre>
+<h1 id="generating-a-bip44-mnemonic-to-use-with-truffle"><a name="generating-a-bip44-mnemonic-to-use-with-truffle" class="plugin-anchor" href="#generating-a-bip44-mnemonic-to-use-with-truffle"><i class="fa fa-link" aria-hidden="true"></i></a>Generating a BIP44 mnemonic to use with truffle</h1>
+<p>You can use <a href="https://iancoleman.io/bip39/" target="_blank">Mnemonic Code Converter</a> to generate a mnemonic for local development</p>
+<ul>
+<li>if you plan on using this tool for mainnet, you can <a href="https://github.com/iancoleman/bip39/releases/latest/" target="_blank">download a release</a> and run it completely offline.</li>
+</ul>
+<p>And then lets take a look at the <a href="https://github.com/qtumproject/react-box/blob/master/truffle-config.js" target="_blank">truffle-config.js</a> file</p>
+<p>Here, you will need to copy your mnemonic into the regtest mnemonic space</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> HDWalletProvider = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@qtumproject/hdwallet-provider&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// See &lt;http://truffleframework.com/docs/advanced/configuration&gt;</span>
+  <span class="hljs-comment">// for more about customizing your Truffle configuration!</span>
+  <span class="hljs-attr">networks</span>: {
+    <span class="hljs-attr">regtest</span>: {
+      <span class="hljs-attr">provider</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">new</span> HDWalletProvider({
+        <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&quot;erode phrase labor rack surge risk armor uniform together prevent crack alley&quot;</span>,
+        <span class="hljs-attr">providerOrUrl</span>: <span class="hljs-string">&quot;http://localhost:23889&quot;</span>,
+      }),
+      <span class="hljs-attr">gasPrice</span>: <span class="hljs-string">&quot;0x5d21dba000&quot;</span>
+    },
+    <span class="hljs-attr">testnet</span>: {
+      <span class="hljs-attr">provider</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">new</span> HDWalletProvider({
+        <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-attr">providerOrUrl</span>: <span class="hljs-string">&quot;https://testnet-janus.qiswap.com/api/&quot;</span>,
+      }),
+      <span class="hljs-attr">gasPrice</span>: <span class="hljs-string">&quot;0x5d21dba000&quot;</span>
+    },
+    <span class="hljs-attr">mainnet</span>: {
+      <span class="hljs-attr">provider</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">new</span> HDWalletProvider({
+        <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-attr">providerOrUrl</span>: <span class="hljs-string">&quot;https://janus.qiswap.com/api/&quot;</span>,
+      }),
+      <span class="hljs-attr">gasPrice</span>: <span class="hljs-string">&quot;0x5d21dba000&quot;</span>
+    },
+  },
+  <span class="hljs-attr">compilers</span>: {
+    <span class="hljs-attr">solc</span>: {
+      <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;^0.8.0&quot;</span>,
+      <span class="hljs-attr">settings</span>: {
+        <span class="hljs-attr">optimizer</span>: {
+          <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">runs</span>: <span class="hljs-number">1</span>,
+        },
+      },
+    },
+  },
+};
+</code></pre>
+<h1 id="launching-janusqtum"><a name="launching-janusqtum" class="plugin-anchor" href="#launching-janusqtum"><i class="fa fa-link" aria-hidden="true"></i></a>Launching Janus/Qtum</h1>
+<pre><code class="lang-bash"><span class="hljs-comment"># Configure Docker networking (only need be done once)</span>
+docker network create --driver bridge qtum
+
+<span class="hljs-comment"># Launch Qtum regtest</span>
+docker run --network=qtum -it --rm \
+  --name qtumd_regtest \
+  -v `<span class="hljs-built_in">pwd</span>`:/root \
+  -p 23888:23888 \
+  -p 3889:3889 \
+  qtum/qtum \
+  qtumd -regtest -txindex -addrindex=1 -logevents \
+  -rpcbind=0.0.0.0:3889 -rpcallowip=0.0.0.0/0 -rpcuser=qtum -rpcpassword=testpasswd
+
+<span class="hljs-comment"># Launch Janus</span>
+docker run --network=qtum -it --rm \
+  --name janus_regtest \
+  -v `<span class="hljs-built_in">pwd</span>`:/root \
+  -p 23889:23889 \
+  ripply/janus:0.2.0 \
+  --<span class="hljs-built_in">bind</span> 0.0.0.0 --dev --qtum-rpc=http://qtum:testpasswd@qtumd_regtest:3889
+</code></pre>
+<h1 id="seeding-regtest-with-qtum"><a name="seeding-regtest-with-qtum" class="plugin-anchor" href="#seeding-regtest-with-qtum"><i class="fa fa-link" aria-hidden="true"></i></a>Seeding regtest with Qtum</h1>
+<p>You can get your address from the truffle console once Qtum is running.</p>
+<pre><code class="lang-bash">truffle console --network regtest
+
+truffle(regtest)&gt; accounts
+[
+  <span class="hljs-string">&apos;0x63c4953002B935C3CA925af419DFCE86C057AB95&apos;</span>,
+  <span class="hljs-string">&apos;0xEccAAa32664B8499931DFB4aFD076a61e01C12F8&apos;</span>,
+  <span class="hljs-string">&apos;0xB118812cCb1C79a6d0849D5393Ee6475Da5b8bdE&apos;</span>,
+  <span class="hljs-string">&apos;0x733722f989763E4243D82FB8667d6DEB08BEC2A8&apos;</span>,
+  <span class="hljs-string">&apos;0xe2ce59EBaC7c1B129c5623B105D62aD64eDDe645&apos;</span>,
+  <span class="hljs-string">&apos;0x2974BE44127169546fC09E7C251C757892C0E990&apos;</span>,
+  <span class="hljs-string">&apos;0x26c0573F40B575F663CD846Fc2D811C13a61866d&apos;</span>,
+  <span class="hljs-string">&apos;0x175eE832683EbE001f01C7c944e585cD799FacB6&apos;</span>,
+  <span class="hljs-string">&apos;0xC76e10C8B54e942a5b9C6E024571D4A2A9fd4a4B&apos;</span>,
+  <span class="hljs-string">&apos;0x9014cedEDF69C02b43a46e414Ac643281A14acd3&apos;</span>
+]
+</code></pre>
+<p>Then you can seed regtest using either qtum-cli or Janus</p>
+<ul>
+<li>note that fromhexaddress requires dropping the hex prefix 0x</li>
+<li>Qtum block rewards need to be at least 2000 blocks old to be used</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-comment"># Get base58 address from hex</span>
+docker <span class="hljs-built_in">exec</span> qtumd_regtest \
+  qtum-cli \
+  -rpcuser=qtum \
+  -rpcpassword=testpasswd \
+  fromhexaddress 63c4953002B935C3CA925af419DFCE86C057AB95
+
+&gt; qSeuYqETzKqcVn3seaTRQ1U8jcaR1QHYQj
+
+<span class="hljs-comment"># Seed regtest with Qtum</span>
+docker <span class="hljs-built_in">exec</span> qtumd_regtest \
+  qtum-cli \
+  -rpcuser=qtum \
+  -rpcpassword=testpasswd \
+  generatetoaddress 2005 qSeuYqETzKqcVn3seaTRQ1U8jcaR1QHYQj
+
+<span class="hljs-comment"># Or do it in one command</span>
+docker <span class="hljs-built_in">exec</span> qtumd_regtest \
+  qtum-cli \
+  -rpcuser=qtum \
+  -rpcpassword=testpasswd \
+  generatetoaddress 2005 `\
+    docker <span class="hljs-built_in">exec</span> qtumd_regtest \
+      qtum-cli \
+      -rpcuser=qtum \
+      -rpcpassword=testpasswd \
+      fromhexaddress 63c4953002B935C3CA925af419DFCE86C057AB95`
+</code></pre>
+<p>Or you can use <code>dev_generatetoaddress</code> Janus RPC call to do this</p>
+<ul>
+<li>note that generating this many blocks will cause Janus to timeout waiting for a response from Qtum, but Qtum will still generate the blocks</li>
+</ul>
+<pre><code class="lang-bash">curl --location --request POST <span class="hljs-string">&apos;http://localhost:23888&apos;</span> \
+  --header <span class="hljs-string">&apos;Content-Type: text/plain&apos;</span> \
+  --data-raw <span class="hljs-string">&apos;{
+    &quot;method&quot;: &quot;dev_generatetoaddress&quot;,
+    &quot;params&quot;: [
+      2005,
+      &quot;63c4953002B935C3CA925af419DFCE86C057AB95&quot;
+    ]
+  }
+  &apos;</span>
+</code></pre>
+<h1 id="truffle-migrate"><a name="truffle-migrate" class="plugin-anchor" href="#truffle-migrate"><i class="fa fa-link" aria-hidden="true"></i></a>truffle migrate</h1>
+<p>Now that your local regtest environment has Qtum</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="janus-docker.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Janus Docker Container">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Truffle","level":"3.3","depth":1,"previous":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/truffle.md","mtime":"2022-07-07T21:01:35.430Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-07T21:10:21.696Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
