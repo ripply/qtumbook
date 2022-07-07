@@ -19,10 +19,11 @@ For development and testing purposes it is most convenient to run a local blockc
 By default, the `qtum/qtum` docker image will start `qtumd` in `mainnet` mode so we need to specify `-regtest` along with some flags to index the blockchain
 
 ```
-docker run -it --rm \
+docker run --network=qtum -it --rm \
   --name qtumd_regtest \
   -v `pwd`:/root \
   -p 23888:23888 \
+  -p 3889:3889 \
   qtum/qtum \
   qtumd -regtest -txindex -addrindex=1 -logevents \
   -rpcbind=0.0.0.0:3889 -rpcallowip=0.0.0.0/0 -rpcuser=qtum -rpcpassword=testpasswd

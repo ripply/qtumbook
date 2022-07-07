@@ -12,7 +12,13 @@
 * [Test & Main Networks](part1/networks.md)
   * [Tip: Free Testnet Tokens](part1/networks.md#getting-testnet-tokens)
 
-### Part 2 - ERC20
+### Part 2 - Web3
+
+* [Web3 Compatibility Layer](part2/janus.md)
+* [Janus Docker Container](part2/janus-docker.md)
+* [Truffle](part2/truffle.md)
+
+### Part 3 - ERC20
 
 * [ERC20 Token](part2/erc20-token.md)
   * [Deploy Contract](part2/erc20-token.md#deploy-contract)
@@ -27,12 +33,12 @@
 * [ERC20 DApp](part2/erc20-dapp.md)
 
 
-### Part 3 - Crowdsale
+### Part 4 - Crowdsale
 
 * [Simple Crowdsale](part3/vevue-ico/README.md)
 * [Complex Crowdsale](part3/ico.md)
 
-### Part 4 - Blockchain API
+### Part 5 - Blockchain API
 
 * [Inspect Raw TX](part4/inspect-raw-tx.md)
 * [Smart Contract](part4/smart-contract.md)
