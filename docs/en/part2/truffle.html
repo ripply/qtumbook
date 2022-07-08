@@ -64,6 +64,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../part3/qnekt.html" />
+    
     
     <link rel="prev" href="janus-docker.html" />
     
@@ -256,6 +258,78 @@
             
                     
                     Truffle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3 - Qnekt/Metamask</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../part3/qnekt.html">
+            
+                <a href="../part3/qnekt.html">
+            
+                    
+                    Qnekt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../part3/why_qnekt.html">
+            
+                <a href="../part3/why_qnekt.html">
+            
+                    
+                    Why the need to fork Metamask?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../part3/sideload_qnekt.html">
+            
+                <a href="../part3/sideload_qnekt.html">
+            
+                    
+                    Sideloading Qnekt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../part3/qnekt_setup.html">
+            
+                <a href="../part3/qnekt_setup.html">
+            
+                    
+                    First time setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../part3/qnekt_faucet.html">
+            
+                <a href="../part3/qnekt_faucet.html">
+            
+                    
+                    Using Testnet Faucet
             
                 </a>
             
@@ -467,7 +541,8 @@ docker <span class="hljs-built_in">exec</span> qtumd_regtest \
 <ul>
 <li>note that generating this many blocks will cause Janus to timeout waiting for a response from Qtum, but Qtum will still generate the blocks</li>
 </ul>
-<pre><code class="lang-bash">curl --location --request POST <span class="hljs-string">&apos;http://localhost:23888&apos;</span> \
+<pre><code class="lang-bash"><span class="hljs-comment"># Directly calling dev_generatetoaddress via Curl</span>
+curl --location --request POST <span class="hljs-string">&apos;http://localhost:23889&apos;</span> \
   --header <span class="hljs-string">&apos;Content-Type: text/plain&apos;</span> \
   --data-raw <span class="hljs-string">&apos;{
     &quot;method&quot;: &quot;dev_generatetoaddress&quot;,
@@ -475,12 +550,131 @@ docker <span class="hljs-built_in">exec</span> qtumd_regtest \
       2005,
       &quot;63c4953002B935C3CA925af419DFCE86C057AB95&quot;
     ]
-  }
-  &apos;</span>
+  }&apos;</span>
+
+<span class="hljs-comment"># response</span>
+{<span class="hljs-string">&quot;jsonrpc&quot;</span>:<span class="hljs-string">&quot;2.0&quot;</span>,<span class="hljs-string">&quot;result&quot;</span>:[<span class="hljs-string">&quot;1369920b45f482096b2159788c2f1cd576b0e37affc176df07904d8a841f8590&quot;</span>, ...]}
 </code></pre>
 <h1 id="truffle-migrate"><a name="truffle-migrate" class="plugin-anchor" href="#truffle-migrate"><i class="fa fa-link" aria-hidden="true"></i></a>truffle migrate</h1>
-<p>Now that your local regtest environment has Qtum</p>
+<p>Now that your local regtest environment has Qtum we can deploy code with truffle</p>
+<pre><code class="lang-bash">truffle migrate --network regtest
 
+Compiling your contracts...
+===========================
+✔ Fetching solc version list from solc-bin. Attempt <span class="hljs-comment">#1</span>
+&gt; Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+&gt; Network name:    <span class="hljs-string">&apos;regtest&apos;</span>
+&gt; Network id:      8890
+&gt; Block gas <span class="hljs-built_in">limit</span>: 40000000 (0x2625a00)
+
+
+1_initial_migration.js
+======================
+
+   Deploying <span class="hljs-string">&apos;Migrations&apos;</span>
+   ----------------------
+   &gt; transaction <span class="hljs-built_in">hash</span>:    0x867d80074f084e27ae2828dea3bd6384d18d4dd3e8a20bafefa1578dff38a726
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x676BC04885F727b393b7d8788E54f0BC47888b0c
+   &gt; block number:        2008
+   &gt; block timestamp:     1657302875
+   &gt; account:             0x63c4953002B935C3CA925af419DFCE86C057AB95
+   &gt; balance:             40099999.836968
+   &gt; gas used:            130690 (0x1fe82)
+   &gt; gas price:           400 gwei
+   &gt; value sent:          2.690858 ETH
+   &gt; total cost:          2.743134 ETH
+
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:            2.743134 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying <span class="hljs-string">&apos;SimpleStorage&apos;</span>
+   -------------------------
+   &gt; transaction <span class="hljs-built_in">hash</span>:    0x7e3fa9e99d9954820bf2f12f4335b5dbf19a1bab409a096de61e526225ca60d2
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xa9052BAfE2d784990F8a99ED69dcB11c147B084C
+   &gt; block number:        2010
+   &gt; block timestamp:     1657302877
+   &gt; account:             0x63c4953002B935C3CA925af419DFCE86C057AB95
+   &gt; balance:             40099999.779758
+   &gt; gas used:            90527 (0x1619f)
+   &gt; gas price:           400 gwei
+   &gt; value sent:          2.690442 ETH
+   &gt; total cost:          2.7266528 ETH
+
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:           2.7266528 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          5.4697868 ETH
+</code></pre>
+<p>Artifacts will be in <code>build/contracts/*.json</code></p>
+<pre><code>tail -n 22 build/contracts/*.json            
+==&gt; build/contracts/Migrations.json &lt;==
+  &quot;networks&quot;: {
+    &quot;8890&quot;: {
+      &quot;events&quot;: {},
+      &quot;links&quot;: {},
+      &quot;address&quot;: &quot;0x676BC04885F727b393b7d8788E54f0BC47888b0c&quot;,
+      &quot;transactionHash&quot;: &quot;0x867d80074f084e27ae2828dea3bd6384d18d4dd3e8a20bafefa1578dff38a726&quot;
+    }
+  },
+  &quot;schemaVersion&quot;: &quot;3.3.4&quot;,
+  &quot;updatedAt&quot;: &quot;2022-07-08T17:54:38.284Z&quot;,
+  &quot;networkType&quot;: &quot;ethereum&quot;,
+  &quot;devdoc&quot;: {
+    &quot;kind&quot;: &quot;dev&quot;,
+    &quot;methods&quot;: {},
+    &quot;version&quot;: 1
+  },
+  &quot;userdoc&quot;: {
+    &quot;kind&quot;: &quot;user&quot;,
+    &quot;methods&quot;: {},
+    &quot;version&quot;: 1
+  }
+}
+==&gt; build/contracts/SimpleStorage.json &lt;==
+  &quot;networks&quot;: {
+    &quot;8890&quot;: {
+      &quot;events&quot;: {},
+      &quot;links&quot;: {},
+      &quot;address&quot;: &quot;0xa9052BAfE2d784990F8a99ED69dcB11c147B084C&quot;,
+      &quot;transactionHash&quot;: &quot;0x7e3fa9e99d9954820bf2f12f4335b5dbf19a1bab409a096de61e526225ca60d2&quot;
+    }
+  },
+  &quot;schemaVersion&quot;: &quot;3.3.4&quot;,
+  &quot;updatedAt&quot;: &quot;2022-07-08T17:54:38.282Z&quot;,
+  &quot;networkType&quot;: &quot;ethereum&quot;,
+  &quot;devdoc&quot;: {
+    &quot;kind&quot;: &quot;dev&quot;,
+    &quot;methods&quot;: {},
+    &quot;version&quot;: 1
+  },
+  &quot;userdoc&quot;: {
+    &quot;kind&quot;: &quot;user&quot;,
+    &quot;methods&quot;: {},
+    &quot;version&quot;: 1
+  }
+}%
+</code></pre>
                                 
                                 </section>
                             
@@ -507,10 +701,14 @@ docker <span class="hljs-built_in">exec</span> qtumd_regtest \
 
             
                 
-                <a href="janus-docker.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Janus Docker Container">
+                <a href="janus-docker.html" class="navigation navigation-prev " aria-label="Previous page: Janus Docker Container">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../part3/qnekt.html" class="navigation navigation-next " aria-label="Next page: Qnekt">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -519,7 +717,7 @@ docker <span class="hljs-built_in">exec</span> qtumd_regtest \
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Truffle","level":"3.3","depth":1,"previous":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/truffle.md","mtime":"2022-07-07T21:01:35.430Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-07T21:10:21.696Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Truffle","level":"3.3","depth":1,"next":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"previous":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/truffle.md","mtime":"2022-07-08T18:20:01.260Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-08T21:44:44.710Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

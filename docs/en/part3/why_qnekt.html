@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Web3 Compatibility Layer · HonKit</title>
+        <title>Why the need to fork Metamask? · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="janus-docker.html" />
+    <link rel="next" href="sideload_qnekt.html" />
     
     
-    <link rel="prev" href="../part1/networks.html" />
+    <link rel="prev" href="qnekt.html" />
     
 
     </head>
@@ -226,9 +226,9 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="janus.html">
+        <li class="chapter " data-level="3.1" data-path="../part2/janus.html">
             
-                <a href="janus.html">
+                <a href="../part2/janus.html">
             
                     
                     Web3 Compatibility Layer
@@ -239,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="janus-docker.html">
+        <li class="chapter " data-level="3.2" data-path="../part2/janus-docker.html">
             
-                <a href="janus-docker.html">
+                <a href="../part2/janus-docker.html">
             
                     
                     Janus Docker Container
@@ -252,9 +252,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="truffle.html">
+        <li class="chapter " data-level="3.3" data-path="../part2/truffle.html">
             
-                <a href="truffle.html">
+                <a href="../part2/truffle.html">
             
                     
                     Truffle
@@ -272,9 +272,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../part3/qnekt.html">
+        <li class="chapter " data-level="4.1" data-path="qnekt.html">
             
-                <a href="../part3/qnekt.html">
+                <a href="qnekt.html">
             
                     
                     Qnekt
@@ -285,9 +285,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../part3/why_qnekt.html">
+        <li class="chapter active" data-level="4.2" data-path="why_qnekt.html">
             
-                <a href="../part3/why_qnekt.html">
+                <a href="why_qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../part3/sideload_qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="sideload_qnekt.html">
             
-                <a href="../part3/sideload_qnekt.html">
+                <a href="sideload_qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../part3/qnekt_setup.html">
+        <li class="chapter " data-level="4.4" data-path="qnekt_setup.html">
             
-                <a href="../part3/qnekt_setup.html">
+                <a href="qnekt_setup.html">
             
                     
                     First time setup
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../part3/qnekt_faucet.html">
+        <li class="chapter " data-level="4.5" data-path="qnekt_faucet.html">
             
-                <a href="../part3/qnekt_faucet.html">
+                <a href="qnekt_faucet.html">
             
                     
                     Using Testnet Faucet
@@ -367,7 +367,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Web3 Compatibility Layer</a>
+        <a href=".." >Why the need to fork Metamask?</a>
     </h1>
 </div>
 
@@ -382,11 +382,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="web3-compatibility-layer"><a name="web3-compatibility-layer" class="plugin-anchor" href="#web3-compatibility-layer"><i class="fa fa-link" aria-hidden="true"></i></a>Web3 Compatibility Layer</h1>
-<p>Janus is a web3 compatibility layer, it bridges the gap between Ethereum and Qtum.
-It is not 100% compatible but with some caveats you can easily port an Ethereum app to Qtum.</p>
-<p><a href="https://blog.qtum.org/introduction-to-janus-795ca6b9b843" target="_blank">Introduction to Janus</a></p>
-<p><a href="https://github.com/qtumproject/janus" target="_blank">Janus on Github</a></p>
+                                <h1 id="why-the-need-to-fork-metamask"><a name="why-the-need-to-fork-metamask" class="plugin-anchor" href="#why-the-need-to-fork-metamask"><i class="fa fa-link" aria-hidden="true"></i></a>Why the need to fork Metamask?</h1>
+<p>Qtum differs fundamentally from Ethereum in it&apos;s <a href="../part1/utxos-balances.html">UTXOs Accounting</a> because it is a fork of Bitcoin.</p>
+<p>In order to sign Qtum transactions we need access to sign arbitrary data. Metamask is designed in such a way that this is impossible in modern versions - as this is very dangerous. Giving unrestricted access to your private key to DAPPs is very dangerous and can easily lead to stolen funds without your knowledge.</p>
+<p>This used to be possible with legacy <code>eth_sign</code> functionality, but modern Metamask versions have completely disabled access to unrestricted arbitrary data signing which makes signing Qtum transactions with Metamask impossible.</p>
+<p>Modern Metamask <code>eth_sign</code> behaves indentically to <code>personal_sign</code> which prefixes data which makes signing arbitrary data impossible.</p>
+<p>Another technical issue is how accounts are generated from public keys.</p>
+<ul>
+<li>Ethereum computes <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">KECCAK-256</a> from an uncompressed public key</li>
+<li>Qtum/Bitcoin computes <a href="https://en.wikipedia.org/wiki/RIPEMD" target="_blank">RIPEMD-160</a> from a compressed public key</li>
+</ul>
 
                                 
                                 </section>
@@ -414,12 +419,12 @@ It is not 100% compatible but with some caveats you can easily port an Ethereum 
 
             
                 
-                <a href="../part1/networks.html" class="navigation navigation-prev " aria-label="Previous page: Test & Main Networks">
+                <a href="qnekt.html" class="navigation navigation-prev " aria-label="Previous page: Qnekt">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="janus-docker.html" class="navigation navigation-next " aria-label="Next page: Janus Docker Container">
+                <a href="sideload_qnekt.html" class="navigation navigation-next " aria-label="Next page: Sideloading Qnekt">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -430,7 +435,7 @@ It is not 100% compatible but with some caveats you can easily port an Ethereum 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Web3 Compatibility Layer","level":"3.1","depth":1,"next":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"previous":{"title":"Test & Main Networks","level":"2.3","depth":1,"path":"part1/networks.md","ref":"part1/networks.md","articles":[{"title":"Tip: Free Testnet Tokens","level":"2.3.1","depth":2,"anchor":"#getting-testnet-tokens","path":"part1/networks.md","ref":"part1/networks.md#getting-testnet-tokens","articles":[]}]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/janus.md","mtime":"2022-07-06T15:41:33.239Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-08T21:44:44.710Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Why the need to fork Metamask?","level":"4.2","depth":1,"next":{"title":"Sideloading Qnekt","level":"4.3","depth":1,"path":"part3/sideload_qnekt.md","ref":"part3/sideload_qnekt.md","articles":[]},"previous":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/why_qnekt.md","mtime":"2022-07-08T20:07:08.324Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-08T21:44:44.710Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

@@ -180,7 +180,8 @@ Or you can use `dev_generatetoaddress` Janus RPC call to do this
  - note that generating this many blocks will cause Janus to timeout waiting for a response from Qtum, but Qtum will still generate the blocks
 
 ```bash
-curl --location --request POST 'http://localhost:23888' \
+# Directly calling dev_generatetoaddress via Curl
+curl --location --request POST 'http://localhost:23889' \
   --header 'Content-Type: text/plain' \
   --data-raw '{
     "method": "dev_generatetoaddress",
@@ -188,10 +189,135 @@ curl --location --request POST 'http://localhost:23888' \
       2005,
       "63c4953002B935C3CA925af419DFCE86C057AB95"
     ]
-  }
-  '
+  }'
+
+# response
+{"jsonrpc":"2.0","result":["1369920b45f482096b2159788c2f1cd576b0e37affc176df07904d8a841f8590", ...]}
 ```
 
 # truffle migrate
 
-Now that your local regtest environment has Qtum
+Now that your local regtest environment has Qtum we can deploy code with truffle
+
+```bash
+truffle migrate --network regtest
+
+Compiling your contracts...
+===========================
+✔ Fetching solc version list from solc-bin. Attempt #1
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'regtest'
+> Network id:      8890
+> Block gas limit: 40000000 (0x2625a00)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x867d80074f084e27ae2828dea3bd6384d18d4dd3e8a20bafefa1578dff38a726
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x676BC04885F727b393b7d8788E54f0BC47888b0c
+   > block number:        2008
+   > block timestamp:     1657302875
+   > account:             0x63c4953002B935C3CA925af419DFCE86C057AB95
+   > balance:             40099999.836968
+   > gas used:            130690 (0x1fe82)
+   > gas price:           400 gwei
+   > value sent:          2.690858 ETH
+   > total cost:          2.743134 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:            2.743134 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'SimpleStorage'
+   -------------------------
+   > transaction hash:    0x7e3fa9e99d9954820bf2f12f4335b5dbf19a1bab409a096de61e526225ca60d2
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xa9052BAfE2d784990F8a99ED69dcB11c147B084C
+   > block number:        2010
+   > block timestamp:     1657302877
+   > account:             0x63c4953002B935C3CA925af419DFCE86C057AB95
+   > balance:             40099999.779758
+   > gas used:            90527 (0x1619f)
+   > gas price:           400 gwei
+   > value sent:          2.690442 ETH
+   > total cost:          2.7266528 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           2.7266528 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          5.4697868 ETH
+```
+
+Artifacts will be in `build/contracts/*.json`
+
+```
+tail -n 22 build/contracts/*.json            
+==> build/contracts/Migrations.json <==
+  "networks": {
+    "8890": {
+      "events": {},
+      "links": {},
+      "address": "0x676BC04885F727b393b7d8788E54f0BC47888b0c",
+      "transactionHash": "0x867d80074f084e27ae2828dea3bd6384d18d4dd3e8a20bafefa1578dff38a726"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2022-07-08T17:54:38.284Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
+==> build/contracts/SimpleStorage.json <==
+  "networks": {
+    "8890": {
+      "events": {},
+      "links": {},
+      "address": "0xa9052BAfE2d784990F8a99ED69dcB11c147B084C",
+      "transactionHash": "0x7e3fa9e99d9954820bf2f12f4335b5dbf19a1bab409a096de61e526225ca60d2"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2022-07-08T17:54:38.282Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}%
+```
