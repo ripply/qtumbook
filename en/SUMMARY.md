@@ -25,3 +25,5 @@
 * [Sideloading Qnekt](part3/sideload_qnekt.md)
 * [First time setup](part3/qnekt_setup.md)
 * [Using Testnet Faucet](part3/qnekt_faucet.md)
+* [Connecting Qnekt to regtest](part3/qnekt_regtest.md)
+* [Connecting react-box to regtest](part3/qnekt_react_box.md)

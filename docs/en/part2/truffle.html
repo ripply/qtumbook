@@ -337,6 +337,32 @@
             
         </li>
     
+        <li class="chapter " data-level="4.6" data-path="../part3/qnekt_regtest.html">
+            
+                <a href="../part3/qnekt_regtest.html">
+            
+                    
+                    Connecting Qnekt to regtest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../part3/qnekt_react_box.html">
+            
+                <a href="../part3/qnekt_react_box.html">
+            
+                    
+                    Connecting react-box to regtest
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -429,6 +455,12 @@ Commands:
   <span class="hljs-comment">// See &lt;http://truffleframework.com/docs/advanced/configuration&gt;</span>
   <span class="hljs-comment">// for more about customizing your Truffle configuration!</span>
   <span class="hljs-attr">networks</span>: {
+    <span class="hljs-comment">// The Janus node has private keys hosted</span>
+    <span class="hljs-attr">janus</span>: {
+      <span class="hljs-attr">host</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+      <span class="hljs-attr">port</span>: <span class="hljs-number">23889</span>,
+      <span class="hljs-attr">network_id</span>: <span class="hljs-string">&quot;*&quot;</span>,
+    },
     <span class="hljs-attr">regtest</span>: {
       <span class="hljs-attr">provider</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">new</span> HDWalletProvider({
         <span class="hljs-attr">mnemonic</span>: <span class="hljs-string">&quot;erode phrase labor rack surge risk armor uniform together prevent crack alley&quot;</span>,
@@ -717,7 +749,7 @@ Summary
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Truffle","level":"3.3","depth":1,"next":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"previous":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/truffle.md","mtime":"2022-07-08T18:20:01.260Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-08T21:44:44.710Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Truffle","level":"3.3","depth":1,"next":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"previous":{"title":"Janus Docker Container","level":"3.2","depth":1,"path":"part2/janus-docker.md","ref":"part2/janus-docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/truffle.md","mtime":"2022-07-10T20:37:07.338Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-10T23:28:52.749Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

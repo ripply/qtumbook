@@ -59,6 +59,12 @@ module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // for more about customizing your Truffle configuration!
   networks: {
+    // The Janus node has private keys hosted
+    janus: {
+      host: "127.0.0.1",
+      port: 23889,
+      network_id: "*",
+    },
     regtest: {
       provider: () => new HDWalletProvider({
         mnemonic: "erode phrase labor rack surge risk armor uniform together prevent crack alley",
