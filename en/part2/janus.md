@@ -6,3 +6,5 @@ It is not 100% compatible but with some caveats you can easily port an Ethereum 
 [Introduction to Janus](https://blog.qtum.org/introduction-to-janus-795ca6b9b843)
 
 [Janus on Github](https://github.com/qtumproject/janus)
+
+![](./qtum-janus.png)
