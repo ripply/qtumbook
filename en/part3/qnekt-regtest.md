@@ -29,14 +29,14 @@ Now, you need to allow self-signed cerficiates for localhost in your browser.
 
 For Chrome, you can do this by setting a flag `chrome://flags/#allow-insecure-localhost`
 
-![](./chrome_self_signed_certificates.PNG)
+![](./chrome-self-signed-certificates.PNG)
 
 You can switch networks from the top right drop down menu
 
-![](./qnekt_switch_network_regtest.PNG)
+![](./qnekt-switch-network-regtest.PNG)
 
 After selecting regtest, you shold be good to go, you can monitor Janus logs for RPC requests
 
-![](./qnekt_network_regtest.PNG)
+![](./qnekt-network-regtest.PNG)
 
 See [Seeding regtest with Qtum](/part2/truffle.md#seeding-regtest-with-qtum) on how to mine blocks to your regtest account.

@@ -14,22 +14,22 @@ npm run start
 
 The Dapp should open in your browser
 
-![](./qnekt_react_box_good_to_go.PNG)
+![](./qnekt-react-box-good-to-go.PNG)
 
 Qnekt will prompt you to connect your account to the Dapp
 
-![](./qnekt_react_box_connect.PNG)
+![](./qnekt-react-box-connect.PNG)
 
 After confirming
 
-![](./qnekt_react_box_connect_confirm.PNG)
+![](./qnekt-react-box-connect-confirm.PNG)
 
 A transaction will be submitted
 
-![](./qnekt_react_box_tx.PNG)
+![](./qnekt-react-box-tx.PNG)
 
 And after being confirmed, the stored value in the smart contract will be updated from 0 to 5
 
-![](./qnekt_react_box_tx_confirmed.PNG)
+![](./qnekt-react-box-tx-confirmed.PNG)
 
 Congratulations, now you have deployed a contract via truffle, connected it to Qnekt and signed a transaction.

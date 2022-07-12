@@ -4,26 +4,26 @@ Download the latest release from [Github](https://github.com/earlgreytech/metama
 
 Extract the zip file to a folder
 
-![](./qnekt_install/qnekt_sideload_extract.PNG)
+![](./qnekt-install/qnekt-sideload-extract.PNG)
 
 Then open your browser and navigate to extensions
 
-![](./qnekt_install/qnekt_sideload_open_extensions.PNG)
+![](./qnekt-install/qnekt-sideload-open-extensions.PNG)
 
 Enable Developer mode at the top right
 
-![](./qnekt_install/qnekt_sideload_developer_mode.PNG)
+![](./qnekt-install/qnekt-sideload-developer-mode.PNG)
 
 Click Load unpacked
 
-![](./qnekt_install/qnekt_sideload_load_unpacked.PNG)
+![](./qnekt-install/qnekt-sideload-load-unpacked.PNG)
 
 Navigate to the folder you extracted the zip file you downloaded
 
-![](./qnekt_install/qnekt_sideload_select_folder.PNG)
+![](./qnekt-install/qnekt-sideload-select-folder.PNG)
 
 You have successfully sideloaded a browser extension
 
-![](./qnekt_install/qnekt_sideload_loaded.PNG)
+![](./qnekt-install/qnekt-sideload-loaded.PNG)
 
-Next step is to do the [first time setup](./qnekt_setup.md)
+Next step is to do the [first time setup](./qnekt-setup.md)

@@ -21,12 +21,12 @@
 ### Part 3 - Qnekt/Metamask
 
 * [Qnekt](part3/qnekt.md)
-* [Why the need to fork Metamask?](part3/why_qnekt.md)
-* [Sideloading Qnekt](part3/sideload_qnekt.md)
-* [First time setup](part3/qnekt_setup.md)
-* [Using Testnet Faucet](part3/qnekt_faucet.md)
-* [Connecting Qnekt to regtest](part3/qnekt_regtest.md)
-* [Connecting react-box to regtest](part3/qnekt_react_box.md)
+* [Why the need to fork Metamask?](part3/why-qnekt.md)
+* [Sideloading Qnekt](part3/sideload-qnekt.md)
+* [First time setup](part3/qnekt-setup.md)
+* [Using Testnet Faucet](part3/qnekt-faucet.md)
+* [Connecting Qnekt to regtest](part3/qnekt-regtest.md)
+* [Connecting react-box to regtest](part3/qnekt-react-box.md)
 
 ### Part 4 - Native Qtum API
 * [Inspect Raw Transaction](part4/inspect-raw-tx.md)
