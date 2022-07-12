@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Connecting Qnekt to regtest · HonKit</title>
+        <title>Why the need to fork Metamask? · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="qnekt_react_box.html" />
+    <link rel="next" href="sideload-qnekt.html" />
     
     
-    <link rel="prev" href="qnekt_faucet.html" />
+    <link rel="prev" href="qnekt.html" />
     
 
     </head>
@@ -285,9 +285,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="why_qnekt.html">
+        <li class="chapter active" data-level="4.2" data-path="why-qnekt.html">
             
-                <a href="why_qnekt.html">
+                <a href="why-qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="sideload_qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="sideload-qnekt.html">
             
-                <a href="sideload_qnekt.html">
+                <a href="sideload-qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="qnekt_setup.html">
+        <li class="chapter " data-level="4.4" data-path="qnekt-setup.html">
             
-                <a href="qnekt_setup.html">
+                <a href="qnekt-setup.html">
             
                     
                     First time setup
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="qnekt_faucet.html">
+        <li class="chapter " data-level="4.5" data-path="qnekt-faucet.html">
             
-                <a href="qnekt_faucet.html">
+                <a href="qnekt-faucet.html">
             
                     
                     Using Testnet Faucet
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.6" data-path="qnekt_regtest.html">
+        <li class="chapter " data-level="4.6" data-path="qnekt-regtest.html">
             
-                <a href="qnekt_regtest.html">
+                <a href="qnekt-regtest.html">
             
                     
                     Connecting Qnekt to regtest
@@ -350,9 +350,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="qnekt_react_box.html">
+        <li class="chapter " data-level="4.7" data-path="qnekt-react-box.html">
             
-                <a href="qnekt_react_box.html">
+                <a href="qnekt-react-box.html">
             
                     
                     Connecting react-box to regtest
@@ -426,7 +426,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Connecting Qnekt to regtest</a>
+        <a href=".." >Why the need to fork Metamask?</a>
     </h1>
 </div>
 
@@ -441,33 +441,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="connecting-qnekt-to-regtest"><a name="connecting-qnekt-to-regtest" class="plugin-anchor" href="#connecting-qnekt-to-regtest"><i class="fa fa-link" aria-hidden="true"></i></a>Connecting Qnekt to regtest</h1>
-<p>Due to browser security settings, Qnekt needs to connect to Janus over https</p>
-<p>With the Janus docker image there is <a href="https://github.com/qtumproject/janus/blob/master/docker/configure_https.sh" target="_blank">a script</a> that will auto generate self signed ssl keys</p>
-<pre><code class="lang-bash">docker run --network=qtum -it --rm \
-  --name janus_regtest \
-  -v `<span class="hljs-built_in">pwd</span>`/https:/https \
-  -p 23889:23889 \
-  --entrypoint /go/src/github.com/qtumproject/janus/docker/configure_https.sh \
-  qtum/janus:latest
-</code></pre>
-<p>This will drop two files in <code>./https/</code> and we need to configure Janus to read them.</p>
-<pre><code class="lang-bash">docker run --network=qtum -it --rm \
-  --name janus_regtest \
-  -v `<span class="hljs-built_in">pwd</span>`:/root \
-  -p 23889:23889 \
-  ripply/janus:0.2.0 \
-  --<span class="hljs-built_in">bind</span> 0.0.0.0 --dev --qtum-rpc=http://qtum:testpasswd@qtumd_regtest:3889 \
-  --https-key /root/https/key.pem --https-cert /root/https/cert.pem
-</code></pre>
-<p>Now, you need to allow self-signed cerficiates for localhost in your browser.</p>
-<p>For Chrome, you can do this by setting a flag <code>chrome://flags/#allow-insecure-localhost</code></p>
-<p><img src="chrome_self_signed_certificates.PNG" alt></p>
-<p>You can switch networks from the top right drop down menu</p>
-<p><img src="qnekt_switch_network_regtest.PNG" alt></p>
-<p>After selecting regtest, you shold be good to go, you can monitor Janus logs for RPC requests</p>
-<p><img src="qnekt_network_regtest.PNG" alt></p>
-<p>See <a href="../part2/truffle.html#seeding-regtest-with-qtum">Seeding regtest with Qtum</a> on how to mine blocks to your regtest account.</p>
+                                <h1 id="why-the-need-to-fork-metamask"><a name="why-the-need-to-fork-metamask" class="plugin-anchor" href="#why-the-need-to-fork-metamask"><i class="fa fa-link" aria-hidden="true"></i></a>Why the need to fork Metamask?</h1>
+<p>Qtum differs fundamentally from Ethereum in it&apos;s <a href="../part1/utxos-balances.html">UTXOs Accounting</a> because it is a fork of Bitcoin.</p>
+<p>In order to sign Qtum transactions we need access to sign arbitrary data. Metamask is designed in such a way that this is impossible in modern versions - as this is very dangerous. Giving unrestricted access to your private key to DAPPs is very dangerous and can easily lead to stolen funds without your knowledge.</p>
+<p>This used to be possible with legacy <code>eth_sign</code> functionality, but modern Metamask versions have completely disabled access to unrestricted arbitrary data signing which makes signing Qtum transactions with Metamask impossible.</p>
+<p>Modern Metamask <code>eth_sign</code> behaves indentically to <code>personal_sign</code> which prefixes data which makes signing arbitrary data impossible.</p>
+<p>Another technical issue is how accounts are generated from public keys.</p>
+<ul>
+<li>Ethereum computes <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">KECCAK-256</a> from an uncompressed public key</li>
+<li>Qtum/Bitcoin computes <a href="https://en.wikipedia.org/wiki/RIPEMD" target="_blank">RIPEMD-160</a> from a compressed public key</li>
+</ul>
 
                                 
                                 </section>
@@ -495,12 +478,12 @@
 
             
                 
-                <a href="qnekt_faucet.html" class="navigation navigation-prev " aria-label="Previous page: Using Testnet Faucet">
+                <a href="qnekt.html" class="navigation navigation-prev " aria-label="Previous page: Qnekt">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="qnekt_react_box.html" class="navigation navigation-next " aria-label="Next page: Connecting react-box to regtest">
+                <a href="sideload-qnekt.html" class="navigation navigation-next " aria-label="Next page: Sideloading Qnekt">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -511,7 +494,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Connecting Qnekt to regtest","level":"4.6","depth":1,"next":{"title":"Connecting react-box to regtest","level":"4.7","depth":1,"path":"part3/qnekt_react_box.md","ref":"part3/qnekt_react_box.md","articles":[]},"previous":{"title":"Using Testnet Faucet","level":"4.5","depth":1,"path":"part3/qnekt_faucet.md","ref":"part3/qnekt_faucet.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt_regtest.md","mtime":"2022-07-12T15:06:32.592Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T17:32:26.837Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Why the need to fork Metamask?","level":"4.2","depth":1,"next":{"title":"Sideloading Qnekt","level":"4.3","depth":1,"path":"part3/sideload-qnekt.md","ref":"part3/sideload-qnekt.md","articles":[]},"previous":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/why-qnekt.md","mtime":"2022-07-12T15:06:32.596Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T18:15:15.604Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

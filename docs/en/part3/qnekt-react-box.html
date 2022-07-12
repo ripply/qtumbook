@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Why the need to fork Metamask? · HonKit</title>
+        <title>Connecting react-box to regtest · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="sideload_qnekt.html" />
+    <link rel="next" href="../part4/inspect-raw-tx.html" />
     
     
-    <link rel="prev" href="qnekt.html" />
+    <link rel="prev" href="qnekt-regtest.html" />
     
 
     </head>
@@ -285,9 +285,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2" data-path="why_qnekt.html">
+        <li class="chapter " data-level="4.2" data-path="why-qnekt.html">
             
-                <a href="why_qnekt.html">
+                <a href="why-qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="sideload_qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="sideload-qnekt.html">
             
-                <a href="sideload_qnekt.html">
+                <a href="sideload-qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="qnekt_setup.html">
+        <li class="chapter " data-level="4.4" data-path="qnekt-setup.html">
             
-                <a href="qnekt_setup.html">
+                <a href="qnekt-setup.html">
             
                     
                     First time setup
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="qnekt_faucet.html">
+        <li class="chapter " data-level="4.5" data-path="qnekt-faucet.html">
             
-                <a href="qnekt_faucet.html">
+                <a href="qnekt-faucet.html">
             
                     
                     Using Testnet Faucet
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="qnekt_regtest.html">
+        <li class="chapter " data-level="4.6" data-path="qnekt-regtest.html">
             
-                <a href="qnekt_regtest.html">
+                <a href="qnekt-regtest.html">
             
                     
                     Connecting Qnekt to regtest
@@ -350,9 +350,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="qnekt_react_box.html">
+        <li class="chapter active" data-level="4.7" data-path="qnekt-react-box.html">
             
-                <a href="qnekt_react_box.html">
+                <a href="qnekt-react-box.html">
             
                     
                     Connecting react-box to regtest
@@ -426,7 +426,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Why the need to fork Metamask?</a>
+        <a href=".." >Connecting react-box to regtest</a>
     </h1>
 </div>
 
@@ -441,16 +441,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="why-the-need-to-fork-metamask"><a name="why-the-need-to-fork-metamask" class="plugin-anchor" href="#why-the-need-to-fork-metamask"><i class="fa fa-link" aria-hidden="true"></i></a>Why the need to fork Metamask?</h1>
-<p>Qtum differs fundamentally from Ethereum in it&apos;s <a href="../part1/utxos-balances.html">UTXOs Accounting</a> because it is a fork of Bitcoin.</p>
-<p>In order to sign Qtum transactions we need access to sign arbitrary data. Metamask is designed in such a way that this is impossible in modern versions - as this is very dangerous. Giving unrestricted access to your private key to DAPPs is very dangerous and can easily lead to stolen funds without your knowledge.</p>
-<p>This used to be possible with legacy <code>eth_sign</code> functionality, but modern Metamask versions have completely disabled access to unrestricted arbitrary data signing which makes signing Qtum transactions with Metamask impossible.</p>
-<p>Modern Metamask <code>eth_sign</code> behaves indentically to <code>personal_sign</code> which prefixes data which makes signing arbitrary data impossible.</p>
-<p>Another technical issue is how accounts are generated from public keys.</p>
-<ul>
-<li>Ethereum computes <a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">KECCAK-256</a> from an uncompressed public key</li>
-<li>Qtum/Bitcoin computes <a href="https://en.wikipedia.org/wiki/RIPEMD" target="_blank">RIPEMD-160</a> from a compressed public key</li>
-</ul>
+                                <h1 id="connecting-react-box-to-regtest"><a name="connecting-react-box-to-regtest" class="plugin-anchor" href="#connecting-react-box-to-regtest"><i class="fa fa-link" aria-hidden="true"></i></a>Connecting react-box to regtest</h1>
+<p>Now that Qnekt is connected to your local regtest instance and you have a balance, we can launch react-box and connect to it via Qnekt/Web3.</p>
+<p>In a previous section, we did <a href="../part2/truffle.html#truffle-migrate"><code>truffle migrate --network regtest</code></a> which generated some contract artifacts.</p>
+<p>We need to copy those into the <a href="https://github.com/qtumproject/react-box/tree/master/client/src" target="_blank"><code>client/src</code></a> folder in <a href="https://github.com/qtumproject/react-box/" target="_blank"><code>react-box</code></a></p>
+<pre><code class="lang-bash">react-box&gt; cp -a build/contracts client/src/
+<span class="hljs-built_in">cd</span> client
+npm run start
+</code></pre>
+<p>The Dapp should open in your browser</p>
+<p><img src="qnekt-react-box-good-to-go.PNG" alt></p>
+<p>Qnekt will prompt you to connect your account to the Dapp</p>
+<p><img src="qnekt-react-box-connect.PNG" alt></p>
+<p>After confirming</p>
+<p><img src="qnekt-react-box-connect-confirm.PNG" alt></p>
+<p>A transaction will be submitted</p>
+<p><img src="qnekt-react-box-tx.PNG" alt></p>
+<p>And after being confirmed, the stored value in the smart contract will be updated from 0 to 5</p>
+<p><img src="qnekt-react-box-tx-confirmed.PNG" alt></p>
+<p>Congratulations, now you have deployed a contract via truffle, connected it to Qnekt and signed a transaction.</p>
 
                                 
                                 </section>
@@ -478,12 +487,12 @@
 
             
                 
-                <a href="qnekt.html" class="navigation navigation-prev " aria-label="Previous page: Qnekt">
+                <a href="qnekt-regtest.html" class="navigation navigation-prev " aria-label="Previous page: Connecting Qnekt to regtest">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="sideload_qnekt.html" class="navigation navigation-next " aria-label="Next page: Sideloading Qnekt">
+                <a href="../part4/inspect-raw-tx.html" class="navigation navigation-next " aria-label="Next page: Inspect Raw Transaction">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -494,7 +503,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Why the need to fork Metamask?","level":"4.2","depth":1,"next":{"title":"Sideloading Qnekt","level":"4.3","depth":1,"path":"part3/sideload_qnekt.md","ref":"part3/sideload_qnekt.md","articles":[]},"previous":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/why_qnekt.md","mtime":"2022-07-12T15:06:32.596Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T17:32:26.837Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Connecting react-box to regtest","level":"4.7","depth":1,"next":{"title":"Inspect Raw Transaction","level":"5.1","depth":1,"path":"part4/inspect-raw-tx.md","ref":"part4/inspect-raw-tx.md","articles":[]},"previous":{"title":"Connecting Qnekt to regtest","level":"4.6","depth":1,"path":"part3/qnekt-regtest.md","ref":"part3/qnekt-regtest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt-react-box.md","mtime":"2022-07-12T18:07:47.513Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T18:15:15.604Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

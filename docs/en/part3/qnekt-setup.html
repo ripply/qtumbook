@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Connecting react-box to regtest · HonKit</title>
+        <title>First time setup · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../part4/inspect-raw-tx.html" />
+    <link rel="next" href="qnekt-faucet.html" />
     
     
-    <link rel="prev" href="qnekt_regtest.html" />
+    <link rel="prev" href="sideload-qnekt.html" />
     
 
     </head>
@@ -285,9 +285,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="why_qnekt.html">
+        <li class="chapter " data-level="4.2" data-path="why-qnekt.html">
             
-                <a href="why_qnekt.html">
+                <a href="why-qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="sideload_qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="sideload-qnekt.html">
             
-                <a href="sideload_qnekt.html">
+                <a href="sideload-qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="qnekt_setup.html">
+        <li class="chapter active" data-level="4.4" data-path="qnekt-setup.html">
             
-                <a href="qnekt_setup.html">
+                <a href="qnekt-setup.html">
             
                     
                     First time setup
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="qnekt_faucet.html">
+        <li class="chapter " data-level="4.5" data-path="qnekt-faucet.html">
             
-                <a href="qnekt_faucet.html">
+                <a href="qnekt-faucet.html">
             
                     
                     Using Testnet Faucet
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="qnekt_regtest.html">
+        <li class="chapter " data-level="4.6" data-path="qnekt-regtest.html">
             
-                <a href="qnekt_regtest.html">
+                <a href="qnekt-regtest.html">
             
                     
                     Connecting Qnekt to regtest
@@ -350,9 +350,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.7" data-path="qnekt_react_box.html">
+        <li class="chapter " data-level="4.7" data-path="qnekt-react-box.html">
             
-                <a href="qnekt_react_box.html">
+                <a href="qnekt-react-box.html">
             
                     
                     Connecting react-box to regtest
@@ -426,7 +426,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Connecting react-box to regtest</a>
+        <a href=".." >First time setup</a>
     </h1>
 </div>
 
@@ -441,25 +441,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="connecting-react-box-to-regtest"><a name="connecting-react-box-to-regtest" class="plugin-anchor" href="#connecting-react-box-to-regtest"><i class="fa fa-link" aria-hidden="true"></i></a>Connecting react-box to regtest</h1>
-<p>Now that Qnekt is connected to your local regtest instance and you have a balance, we can launch react-box and connect to it via Qnekt/Web3.</p>
-<p>In a previous section, we did <a href="../part2/truffle.html#truffle-migrate"><code>truffle migrate --network regtest</code></a> which generated some contract artifacts.</p>
-<p>We need to copy those into the <a href="https://github.com/qtumproject/react-box/tree/master/client/src" target="_blank"><code>client/src</code></a> folder in <a href="https://github.com/qtumproject/react-box/" target="_blank"><code>react-box</code></a></p>
-<pre><code class="lang-bash">react-box&gt; cp -a build/contracts client/src/
-<span class="hljs-built_in">cd</span> client
-npm run start
-</code></pre>
-<p>The Dapp should open in your browser</p>
-<p><img src="qnekt_react_box_good_to_go.PNG" alt></p>
-<p>Qnekt will prompt you to connect your account to the Dapp</p>
-<p><img src="qnekt_react_box_connect.PNG" alt></p>
-<p>After confirming</p>
-<p><img src="qnekt_react_box_connect_confirm.PNG" alt></p>
-<p>A transaction will be submitted</p>
-<p><img src="qnekt_react_box_tx.PNG" alt></p>
-<p>And after being confirmed, the stored value in the smart contract will be updated from 0 to 5</p>
-<p><img src="qnekt_react_box_tx_confirmed.PNG" alt></p>
-<p>Congratulations, now you have deployed a contract via truffle, connected it to Qnekt and signed a transaction.</p>
+                                <h1 id="first-time-setup"><a name="first-time-setup" class="plugin-anchor" href="#first-time-setup"><i class="fa fa-link" aria-hidden="true"></i></a>First time setup</h1>
+<p>You should see a greeting</p>
+<p><img src="qnekt-install/qnekt-setup-get-started.PNG" alt></p>
+<p>Optionally enable sending of analycis</p>
+<p><img src="qnekt-install/qnekt-setup-analytics.PNG" alt></p>
+<p>If you already have a wallet you can use that, otherwise you can create a new one by following along</p>
+<p><img src="qnekt-install/qnekt-setup-wallet-option.PNG" alt></p>
+<p>Optionally watch the video that explains what a wallet is</p>
+<p><img src="qnekt-install/qnekt-setup-secure-wallet.PNG" alt></p>
+<p>Write down your recovery phrase</p>
+<p><img src="qnekt-install/qnekt-setup-recovery-phrase.PNG" alt></p>
+<p>And complete the challenge to confirm you have it written down</p>
+<p><img src="qnekt-install/qnekt-setup-confirm-recovery-phrase.PNG" alt></p>
+<p>Congratulations, you have finished setting up your Qnekt browser wallet!</p>
+<p><img src="qnekt-install/qnekt-setup-complete.PNG" alt></p>
+<p>Now lets continue and get some testnet <a href="qnekt-faucet.html">Qtum from the faucet</a></p>
 
                                 
                                 </section>
@@ -487,12 +484,12 @@ npm run start
 
             
                 
-                <a href="qnekt_regtest.html" class="navigation navigation-prev " aria-label="Previous page: Connecting Qnekt to regtest">
+                <a href="sideload-qnekt.html" class="navigation navigation-prev " aria-label="Previous page: Sideloading Qnekt">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../part4/inspect-raw-tx.html" class="navigation navigation-next " aria-label="Next page: Inspect Raw Transaction">
+                <a href="qnekt-faucet.html" class="navigation navigation-next " aria-label="Next page: Using Testnet Faucet">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -503,7 +500,7 @@ npm run start
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Connecting react-box to regtest","level":"4.7","depth":1,"next":{"title":"Inspect Raw Transaction","level":"5.1","depth":1,"path":"part4/inspect-raw-tx.md","ref":"part4/inspect-raw-tx.md","articles":[]},"previous":{"title":"Connecting Qnekt to regtest","level":"4.6","depth":1,"path":"part3/qnekt_regtest.md","ref":"part3/qnekt_regtest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt_react_box.md","mtime":"2022-07-12T15:06:32.588Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T17:32:26.837Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"First time setup","level":"4.4","depth":1,"next":{"title":"Using Testnet Faucet","level":"4.5","depth":1,"path":"part3/qnekt-faucet.md","ref":"part3/qnekt-faucet.md","articles":[]},"previous":{"title":"Sideloading Qnekt","level":"4.3","depth":1,"path":"part3/sideload-qnekt.md","ref":"part3/sideload-qnekt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt-setup.md","mtime":"2022-07-12T18:08:37.037Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-12T18:15:15.604Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
