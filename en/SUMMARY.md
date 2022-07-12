@@ -27,3 +27,7 @@
 * [Using Testnet Faucet](part3/qnekt_faucet.md)
 * [Connecting Qnekt to regtest](part3/qnekt_regtest.md)
 * [Connecting react-box to regtest](part3/qnekt_react_box.md)
+
+### Part 4 - Native Qtum API
+* [Inspect Raw Transaction](part4/inspect-raw-tx.md)
+* [Smart Contract](part4/smart-contract.md)

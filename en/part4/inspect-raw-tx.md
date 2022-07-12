@@ -13,7 +13,7 @@ In particular:
 Let's generate a new address to receive fund
 
 ```
-qcli getnewaddress
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getnewaddress
 
 qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD
 ```
@@ -21,7 +21,7 @@ qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD
 For testing, let's send some money from our own wallet to this address:
 
 ```
-qcli sendtoaddress qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD 10
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd sendtoaddress qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD 10
 ```
 
 The transaction id is returned:
@@ -33,7 +33,7 @@ f2cb9a0cac73b7bf9dd1ba2fcfddfe91ae2f6d1e8083f8a848e61427a85d830d
 Once the transaction is confirmed, we can see that the receiving address has money:
 
 ```
-qcli getreceivedbyaddress qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getreceivedbyaddress qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD
 
 10.00000000
 ```
@@ -43,7 +43,7 @@ qcli getreceivedbyaddress qNUAQzJCy4UZXTsUWLdBsgMDfS8yF4nuGD
 Use the transaction id to look up information about it:
 
 ```
-qcli gettransaction \
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd gettransaction \
   f2cb9a0cac73b7bf9dd1ba2fcfddfe91ae2f6d1e8083f8a848e61427a85d830d
 ```
 
@@ -94,13 +94,13 @@ This data structure is key to understanding how the bitcoin ledger works.
 The `hex` property returned previously is the raw transaction data. Or we could also look it up with `getrawtransaction`:
 
 ```
-qcli getrawtransaction f2cb9a0cac73b7bf9dd1ba2fcfddfe91ae2f6d1e8083f8a848e61427a85d830d
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getrawtransaction f2cb9a0cac73b7bf9dd1ba2fcfddfe91ae2f6d1e8083f8a848e61427a85d830d
 ```
 
 Let's now decode the raw tx data:
 
 ```
-qcli decoderawtransaction \
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd decoderawtransaction \
 0200000001a65a0dad79515e70b2ee1406aa0bc083704b4d4a7528d7d4511210d6abbcb93902000000494830450221008c2f779baa08239d707f758068346b15b4c3b6a0cfc7ccb361bcc69f01eebfb2022018f2e38074c2f8673ebcb30358da6822c30a74a26b7feb852bab44e4ec5c40dd01feffffff02002aae6dd10100001976a914722b74ca801e90be5240d2f084440d71c3c2572488ac00ca9a3b000000001976a91435dbe99b7be1e43463e0fec2d431b67bcc6ef67e88ac98040000
 ```
 
@@ -208,8 +208,8 @@ The cryptographic "lock" alluded to are just simple fragments of BTC scripts. Th
 The UTXO that's used as input is the second output of the transaction `39b9bcabd6101251d4d728754a4d4b7083c00baa0614eeb2705e5179ad0d5aa6`. Let's decode that transaction:
 
 ```
-qcli decoderawtransaction \
-  `qcli getrawtransaction 39b9bcabd6101251d4d728754a4d4b7083c00baa0614eeb2705e5179ad0d5aa6`
+qtum-cli -rpcuser=qtum -rpcpassword=testpasswd decoderawtransaction \
+  `qtum-cli -rpcuser=qtum -rpcpassword=testpasswd getrawtransaction 39b9bcabd6101251d4d728754a4d4b7083c00baa0614eeb2705e5179ad0d5aa6`
 ```
 
 The data for this UTXO is:
