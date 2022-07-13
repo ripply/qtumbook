@@ -17,6 +17,7 @@
 * [Web3 Compatibility Layer](part2/janus.md)
 * [Janus Docker Container](part2/janus-docker.md)
 * [Truffle](part2/truffle.md)
+* [Caveats](part2/caveats.md)
 
 ### Part 3 - Qnekt/Metamask
 
@@ -31,3 +32,4 @@
 ### Part 4 - Native Qtum API
 * [Inspect Raw Transaction](part4/inspect-raw-tx.md)
 * [Smart Contract](part4/smart-contract.md)
+* [Paying for other user's fees](part4/op-sender.md)

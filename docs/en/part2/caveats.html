@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Qnekt · HonKit</title>
+        <title>Caveats · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="why-qnekt.html" />
+    <link rel="next" href="../part3/qnekt.html" />
     
     
-    <link rel="prev" href="../part2/caveats.html" />
+    <link rel="prev" href="truffle.html" />
     
 
     </head>
@@ -226,9 +226,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../part2/janus.html">
+        <li class="chapter " data-level="3.1" data-path="janus.html">
             
-                <a href="../part2/janus.html">
+                <a href="janus.html">
             
                     
                     Web3 Compatibility Layer
@@ -239,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../part2/janus-docker.html">
+        <li class="chapter " data-level="3.2" data-path="janus-docker.html">
             
-                <a href="../part2/janus-docker.html">
+                <a href="janus-docker.html">
             
                     
                     Janus Docker Container
@@ -252,9 +252,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../part2/truffle.html">
+        <li class="chapter " data-level="3.3" data-path="truffle.html">
             
-                <a href="../part2/truffle.html">
+                <a href="truffle.html">
             
                     
                     Truffle
@@ -265,9 +265,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="../part2/caveats.html">
+        <li class="chapter active" data-level="3.4" data-path="caveats.html">
             
-                <a href="../part2/caveats.html">
+                <a href="caveats.html">
             
                     
                     Caveats
@@ -285,9 +285,9 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="qnekt.html">
+        <li class="chapter " data-level="4.1" data-path="../part3/qnekt.html">
             
-                <a href="qnekt.html">
+                <a href="../part3/qnekt.html">
             
                     
                     Qnekt
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="why-qnekt.html">
+        <li class="chapter " data-level="4.2" data-path="../part3/why-qnekt.html">
             
-                <a href="why-qnekt.html">
+                <a href="../part3/why-qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="sideload-qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="../part3/sideload-qnekt.html">
             
-                <a href="sideload-qnekt.html">
+                <a href="../part3/sideload-qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -324,9 +324,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="qnekt-setup.html">
+        <li class="chapter " data-level="4.4" data-path="../part3/qnekt-setup.html">
             
-                <a href="qnekt-setup.html">
+                <a href="../part3/qnekt-setup.html">
             
                     
                     First time setup
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="qnekt-faucet.html">
+        <li class="chapter " data-level="4.5" data-path="../part3/qnekt-faucet.html">
             
-                <a href="qnekt-faucet.html">
+                <a href="../part3/qnekt-faucet.html">
             
                     
                     Using Testnet Faucet
@@ -350,9 +350,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="qnekt-regtest.html">
+        <li class="chapter " data-level="4.6" data-path="../part3/qnekt-regtest.html">
             
-                <a href="qnekt-regtest.html">
+                <a href="../part3/qnekt-regtest.html">
             
                     
                     Connecting Qnekt to regtest
@@ -363,9 +363,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="qnekt-react-box.html">
+        <li class="chapter " data-level="4.7" data-path="../part3/qnekt-react-box.html">
             
-                <a href="qnekt-react-box.html">
+                <a href="../part3/qnekt-react-box.html">
             
                     
                     Connecting react-box to regtest
@@ -452,7 +452,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Qnekt</a>
+        <a href=".." >Caveats</a>
     </h1>
 </div>
 
@@ -467,13 +467,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="qnekt"><a name="qnekt" class="plugin-anchor" href="#qnekt"><i class="fa fa-link" aria-hidden="true"></i></a>Qnekt</h1>
-<p><a href="https://github.com/earlgreytech/metamask-extension" target="_blank">Qnekt</a> is a fork of Metamask</p>
-<ul>
-<li>Since Qtum is a fork of Bitcoin and uses <a href="part1/utxos-balances.html">UTXOs</a>, transaction signing is completely different from Ethereum.</li>
-<li>Because of that, it is not possible to just add <a href="../part2/janus.html">Janus</a> as a remote endpoint in Metamask and have everything just work.</li>
-<li>For a more technical understanding, see <a href="why-qnekt.html">Why the need to fork Metamask?</a></li>
-</ul>
+                                <h1 id="differences-between-qtum-and-ethereum"><a name="differences-between-qtum-and-ethereum" class="plugin-anchor" href="#differences-between-qtum-and-ethereum"><i class="fa fa-link" aria-hidden="true"></i></a>Differences between QTUM and Ethereum</h1>
+<p>Please see the <a href="https://github.com/qtumproject/janus/blob/master/DIFFERENCES.md" target="_blank">Janus documentation</a> for up to date caveats to be aware of when developing for Qtum</p>
 
                                 
                                 </section>
@@ -501,12 +496,12 @@
 
             
                 
-                <a href="../part2/caveats.html" class="navigation navigation-prev " aria-label="Previous page: Caveats">
+                <a href="truffle.html" class="navigation navigation-prev " aria-label="Previous page: Truffle">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="why-qnekt.html" class="navigation navigation-next " aria-label="Next page: Why the need to fork Metamask?">
+                <a href="../part3/qnekt.html" class="navigation navigation-next " aria-label="Next page: Qnekt">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -517,7 +512,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Qnekt","level":"4.1","depth":1,"next":{"title":"Why the need to fork Metamask?","level":"4.2","depth":1,"path":"part3/why-qnekt.md","ref":"part3/why-qnekt.md","articles":[]},"previous":{"title":"Caveats","level":"3.4","depth":1,"path":"part2/caveats.md","ref":"part2/caveats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt.md","mtime":"2022-07-12T18:05:47.779Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T19:38:54.239Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Caveats","level":"3.4","depth":1,"next":{"title":"Qnekt","level":"4.1","depth":1,"path":"part3/qnekt.md","ref":"part3/qnekt.md","articles":[]},"previous":{"title":"Truffle","level":"3.3","depth":1,"path":"part2/truffle.md","ref":"part2/truffle.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part2/caveats.md","mtime":"2022-07-13T19:06:12.747Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T19:38:54.239Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

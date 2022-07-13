@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Qnekt · HonKit</title>
+        <title>Paying for other user's fees · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -64,10 +64,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="why-qnekt.html" />
     
-    
-    <link rel="prev" href="../part2/caveats.html" />
+    <link rel="prev" href="smart-contract.html" />
     
 
     </head>
@@ -285,9 +283,9 @@
         
         
     
-        <li class="chapter active" data-level="4.1" data-path="qnekt.html">
+        <li class="chapter " data-level="4.1" data-path="../part3/qnekt.html">
             
-                <a href="qnekt.html">
+                <a href="../part3/qnekt.html">
             
                     
                     Qnekt
@@ -298,9 +296,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="why-qnekt.html">
+        <li class="chapter " data-level="4.2" data-path="../part3/why-qnekt.html">
             
-                <a href="why-qnekt.html">
+                <a href="../part3/why-qnekt.html">
             
                     
                     Why the need to fork Metamask?
@@ -311,9 +309,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="sideload-qnekt.html">
+        <li class="chapter " data-level="4.3" data-path="../part3/sideload-qnekt.html">
             
-                <a href="sideload-qnekt.html">
+                <a href="../part3/sideload-qnekt.html">
             
                     
                     Sideloading Qnekt
@@ -324,9 +322,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="qnekt-setup.html">
+        <li class="chapter " data-level="4.4" data-path="../part3/qnekt-setup.html">
             
-                <a href="qnekt-setup.html">
+                <a href="../part3/qnekt-setup.html">
             
                     
                     First time setup
@@ -337,9 +335,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="qnekt-faucet.html">
+        <li class="chapter " data-level="4.5" data-path="../part3/qnekt-faucet.html">
             
-                <a href="qnekt-faucet.html">
+                <a href="../part3/qnekt-faucet.html">
             
                     
                     Using Testnet Faucet
@@ -350,9 +348,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="qnekt-regtest.html">
+        <li class="chapter " data-level="4.6" data-path="../part3/qnekt-regtest.html">
             
-                <a href="qnekt-regtest.html">
+                <a href="../part3/qnekt-regtest.html">
             
                     
                     Connecting Qnekt to regtest
@@ -363,9 +361,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="qnekt-react-box.html">
+        <li class="chapter " data-level="4.7" data-path="../part3/qnekt-react-box.html">
             
-                <a href="qnekt-react-box.html">
+                <a href="../part3/qnekt-react-box.html">
             
                     
                     Connecting react-box to regtest
@@ -383,9 +381,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../part4/inspect-raw-tx.html">
+        <li class="chapter " data-level="5.1" data-path="inspect-raw-tx.html">
             
-                <a href="../part4/inspect-raw-tx.html">
+                <a href="inspect-raw-tx.html">
             
                     
                     Inspect Raw Transaction
@@ -396,9 +394,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../part4/smart-contract.html">
+        <li class="chapter " data-level="5.2" data-path="smart-contract.html">
             
-                <a href="../part4/smart-contract.html">
+                <a href="smart-contract.html">
             
                     
                     Smart Contract
@@ -409,9 +407,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../part4/op-sender.html">
+        <li class="chapter active" data-level="5.3" data-path="op-sender.html">
             
-                <a href="../part4/op-sender.html">
+                <a href="op-sender.html">
             
                     
                     Paying for other user's fees
@@ -452,7 +450,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Qnekt</a>
+        <a href=".." >Paying for other user's fees</a>
     </h1>
 </div>
 
@@ -467,12 +465,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="qnekt"><a name="qnekt" class="plugin-anchor" href="#qnekt"><i class="fa fa-link" aria-hidden="true"></i></a>Qnekt</h1>
-<p><a href="https://github.com/earlgreytech/metamask-extension" target="_blank">Qnekt</a> is a fork of Metamask</p>
+                                <h1 id="paying-for-other-users-fees"><a name="paying-for-other-users-fees" class="plugin-anchor" href="#paying-for-other-users-fees"><i class="fa fa-link" aria-hidden="true"></i></a>Paying for other user&apos;s fees</h1>
+<p>Qtum <a href="https://blog.qtum.org/qip-5-add-op-sender-opcode-571511802938" target="_blank">QIP-5</a> added a custom bitcoin script opcode <code>OP_SENDER</code></p>
+<p>This opcode lets you pay for fees/gas with one account and do EVM transactions with another account - this account doesn&apos;t even need to have Qtum.</p>
+<p>The bitcoin script for this type of transaction looks like <a href="https://qtum.info/tx/51f7c3202a3d828a5b79bc840ff2b16e7c42804cb8a85e7c036474cccdb39b5a" target="_blank">this</a></p>
+<pre><code>// Address type
+// PUBKEYHASH = 1,
+// SCRIPTHASH = 2,
+// WITNESSSCRIPTHASH = 3,
+// WITNESSPUBKEYHASH = 4,
+// NONSTANDARD = 5
+1
+// Address
+093c2ab5bd4c28e7d66e8e2745564126256e95a1
+// {signature, pubkey} // serialized scriptSig
+6a4730440220684046d36bd6960309d446050cbd48d629253db689ffd9423038f2d9aed0929002200728da6043a2195d80a080e99308f5657ce5a204d7b67af0b0249697422ca80c0121033b0f572752b89704201e50e3f7c1b9051e94b2cc5ff60e73ea085babdec9c19f
+// opcode
+OP_SENDER
+// normal OP_CALL or OP_CREATE bitcoin script follows
+// EVM Version
+4
+// gas limit
+250000
+// gas price in satoshi
+40
+[byte code] a9059cbb0000000000000000000000007dfa26095ae1fbd7992dbefd335f5b20250fd2bf0000000000000000000000000000000000000000000000106a1f56e1ed4b9000
+54fefdb5b31164f66ddb68becd7bdd864cacd65b
+OP_CALL
+</code></pre><p>Qtumd and <a href="https://github.com/qtumproject/qtumj/blob/master/examples/src/main/java/org/bitcoinj/examples/ContractOpSender.java" target="_blank">Qtumj</a> support OP_SENDER</p>
+<p>The signature for OP_SENDER is the DER encoded signature of the Sha256 SegwitSignatureHash of the script sig followed by the sighash</p>
 <ul>
-<li>Since Qtum is a fork of Bitcoin and uses <a href="part1/utxos-balances.html">UTXOs</a>, transaction signing is completely different from Ethereum.</li>
-<li>Because of that, it is not possible to just add <a href="../part2/janus.html">Janus</a> as a remote endpoint in Metamask and have everything just work.</li>
-<li>For a more technical understanding, see <a href="why-qnekt.html">Why the need to fork Metamask?</a></li>
+<li>See <a href="https://github.com/qtumproject/qtum/blob/master/test/functional/qtum_op_sender.py" target="_blank">qtum_op_sender.py</a> for the python implementation of how to generate the signature</li>
 </ul>
 
                                 
@@ -501,14 +524,10 @@
 
             
                 
-                <a href="../part2/caveats.html" class="navigation navigation-prev " aria-label="Previous page: Caveats">
+                <a href="smart-contract.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Smart Contract">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="why-qnekt.html" class="navigation navigation-next " aria-label="Next page: Why the need to fork Metamask?">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -517,7 +536,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Qnekt","level":"4.1","depth":1,"next":{"title":"Why the need to fork Metamask?","level":"4.2","depth":1,"path":"part3/why-qnekt.md","ref":"part3/why-qnekt.md","articles":[]},"previous":{"title":"Caveats","level":"3.4","depth":1,"path":"part2/caveats.md","ref":"part2/caveats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/qnekt.md","mtime":"2022-07-12T18:05:47.779Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T19:38:54.239Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Paying for other user's fees","level":"5.3","depth":1,"previous":{"title":"Smart Contract","level":"5.2","depth":1,"path":"part4/smart-contract.md","ref":"part4/smart-contract.md","articles":[]},"dir":"ltr"},"config":{"plugins":["language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part4/op-sender.md","mtime":"2022-07-13T19:38:46.506Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T19:38:54.239Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
